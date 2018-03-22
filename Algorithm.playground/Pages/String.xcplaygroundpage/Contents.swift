@@ -210,6 +210,32 @@ class Solution6 {
     }
 }
 
+/*:
+ ### 7.实现 strStr()。
+ 返回蕴含在 haystack 中的 needle 的第一个字符的索引，如果 needle 不是 haystack 的一部分则返回 -1 。
+ 
+```
+ 输入: haystack = "hello", needle = "ll"
+ 输出: 2
+ 
+ 输入: haystack = "aaaaa", needle = "bba"
+ 输出: -1
+```
+ */
+
+/*:
+ 思路：
+ 1. 判断字符串中是否含有子字符串
+ 2. 用数组切割的方式切割字符串判断是否是第一段字符
+ 3. 不是第一段字符就取第一个数组的最后一个下标加一
+ */
+
+class Solution7 {
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        
+    }
+}
+
 
 
 //: [Next](@next)
