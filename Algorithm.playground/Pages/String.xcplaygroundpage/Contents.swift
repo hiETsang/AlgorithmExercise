@@ -162,22 +162,81 @@ Solution4().isAnagram("asdfgh", "sdfghaa")
 
 /*:
  思路：
- 1. 去除其他字符，只留大小写
+ 1. 逆序遍历去除其他字符，只留大小写
  2. 全部转换成小写
  3. 循环判断是否是回文
  */
 class Solution5 {
     func isPalindrome(_ s: String) -> Bool {
         var str = s
-        for char in s.utf8.enumerated() {
-            guard (char > 64 && char < 91) || (char > 96 && char < 123) else {
-                str.remove(at: str.index(<#T##i: String.Index##String.Index#>, offsetBy: <#T##String.IndexDistance#>))
+        for char in s.utf8.enumerated().reversed() {
+            if (char.element > 64 && char.element < 91) || (char.element > 96 && char.element < 123) || (char.element >= 48 && char.element < 58)
+            {
+            }else {
+                str.remove(at: str.index(str.startIndex, offsetBy: char.offset))
             }
         }
+        str = str.lowercased()
+        
+        return str.reversed() == Array(str)
+    }
+}
+
+Solution5().isPalindrome("0123456789")
+
+/*:
+ ### 6.实现 atoi，将字符串转为整数。
+ atoi() 函数会扫描参数 str 字符串，跳过前面的空白字符（例如空格，tab缩进等，可以通过 isspace() 函数来检测），直到遇上数字或正负符号才开始做转换，而再遇到非数字或字符串结束时('\0')才结束转换，并将结果返回。
+ 
+ > 仔细考虑所有输入情况。如果你想挑战自己，请不要看下面并自己考虑所有可能的输入情况。
+ */
+
+/*:
+ 思路：
+ 1. 遍历字符串
+ 2. 数字或者正负号加到新字符串中，注意单个+-的情况
+ 3. 判断新字符串，输出
+ */
+
+class Solution6 {
+    func myAtoi(_ str: String) -> Int {
+        var newStr = String()
+        for char in str.enumerated() {
+            if (char.element == "+" || char.element == "-") && str.count - 1 > char.offset {
+                
+            }
+        }
+        return 1
     }
 }
 
 
+
+/*:
+ ### 7.实现 strStr()。
+ 返回蕴含在 haystack 中的 needle 的第一个字符的索引，如果 needle 不是 haystack 的一部分则返回 -1 。
+ 
+```
+ 输入: haystack = "hello", needle = "ll"
+ 输出: 2
+ 
+ 输入: haystack = "aaaaa", needle = "bba"
+ 输出: -1
+```
+ */
+
+/*:
+ 思路：
+ 1. 判断字符串中是否含有子字符串
+ 2. 用数组切割的方式切割字符串判断是否是第一段字符
+ 3. 不是第一段字符就取第一个数组的最后一个下标加一
+ */
+
+class Solution7 {
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        
+    }
+}
 
 
 
