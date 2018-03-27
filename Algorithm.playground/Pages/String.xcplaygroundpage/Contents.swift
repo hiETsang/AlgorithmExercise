@@ -190,7 +190,6 @@ Solution5().isPalindrome("0123456789")
  
  > 仔细考虑所有输入情况。如果你想挑战自己，请不要看下面并自己考虑所有可能的输入情况。
  */
-
 /*:
  思路：
  1. 遍历字符串
@@ -200,7 +199,8 @@ Solution5().isPalindrome("0123456789")
 
 class Solution6 {
     func myAtoi(_ str: String) -> Int {
-        var newStr = String()
+        var newStr = ()
+        
         for char in str.enumerated() {
             if (char.element == "+" || char.element == "-") && str.count - 1 > char.offset {
                 
@@ -234,7 +234,7 @@ class Solution6 {
 
 class Solution7 {
     func strStr(_ haystack: String, _ needle: String) -> Int {
-        
+        return 1
     }
 }
 
