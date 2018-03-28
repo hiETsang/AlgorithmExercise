@@ -199,17 +199,27 @@ Solution5().isPalindrome("0123456789")
 
 class Solution6 {
     func myAtoi(_ str: String) -> Int {
-        var newStr = ()
+        var newStr = String()
         
-        for char in str.enumerated() {
-            if (char.element == "+" || char.element == "-") && str.count - 1 > char.offset {
-                
+        for char in str.utf8.enumerated() {
+            if (char.element == 43 || char.element == 45) || (char.element >= 48 && char.element < 58) {
+                newStr = newStr + String(UnicodeScalar(char.element))
+            }else
+            {
+                //不符合要求
+                if newStr.isEmpty {
+                    continue
+                }else{
+                    
+                }
             }
         }
+        print(newStr)
         return 1
     }
 }
 
+Solution6().myAtoi("12344asdad")
 
 
 /*:
