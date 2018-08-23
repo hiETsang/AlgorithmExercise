@@ -35,7 +35,7 @@ solution.removeDuplicates(&array)
  */
 class Solution2 {
     func rotate(_ nums: inout [Int], _ k: Int) {
-        if k == 0 {
+        guard k != 0 else {
             return
         }
         for _ in 1...k {
